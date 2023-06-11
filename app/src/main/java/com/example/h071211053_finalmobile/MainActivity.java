@@ -1,11 +1,6 @@
-package com.example.nim_finalmobile;
+package com.example.h071211053_finalmobile;
 
-
-import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,35 +25,41 @@ public class MainActivity extends AppCompatActivity {
                 .addToBackStack(null)
                 .commit();
 
-        movie_iv.setOnClickListener(btn -> {
-            MovieFragment movieFragment = new MovieFragment();
-            fragmentManager
-                    .beginTransaction()
-                    .replace(R.id.frame_container, movieFragment,
-                            MovieFragment.class.getSimpleName())
-                    .addToBackStack(null)
-                    .commit();
-        });
+        movie_iv.setOnClickListener(btn -> openMovieFragment(fragmentManager));
 
-        series_iv.setOnClickListener(btn -> {
-            TvShowFragment tvShow = new TvShowFragment();
-            fragmentManager
-                    .beginTransaction()
-                    .replace(R.id.frame_container, tvShow,
-                            TvShowFragment.class.getSimpleName())
-                    .addToBackStack(null)
-                    .commit();
-        });
+        series_iv.setOnClickListener(btn -> openTvShowFragment(fragmentManager));
 
-        favorites_iv.setOnClickListener(btn -> {
-            FavoriteFragment favorite = new FavoriteFragment();
-            fragmentManager
-                    .beginTransaction()
-                    .replace(R.id.frame_container, favorite,
-                            FavoriteFragment.class.getSimpleName())
-                    .addToBackStack(null)
-                    .commit();
-        });
+        favorites_iv.setOnClickListener(btn -> openFavoriteFragment(fragmentManager));
     }
 
+    private void openMovieFragment(FragmentManager fragmentManager) {
+        MovieFragment movieFragment = new MovieFragment();
+        fragmentManager
+                .beginTransaction()
+                .replace(R.id.frame_container, movieFragment,
+                        MovieFragment.class.getSimpleName())
+                .addToBackStack(null)
+                .commit();
+    }
+
+    private void openTvShowFragment(FragmentManager fragmentManager) {
+        TvShowFragment tvShow = new TvShowFragment();
+        fragmentManager
+                .beginTransaction()
+                .replace(R.id.frame_container, tvShow,
+                        TvShowFragment.class.getSimpleName())
+                .addToBackStack(null)
+                .commit();
+    }
+
+    private void openFavoriteFragment(FragmentManager fragmentManager) {
+        FavoriteFragment favorite = new FavoriteFragment();
+        fragmentManager
+                .beginTransaction()
+                .replace(R.id.frame_container, favorite,
+                        FavoriteFragment.class.getSimpleName())
+                .addToBackStack(null)
+                .commit();
+    }
 }
+

@@ -1,6 +1,4 @@
-package com.example.nim_finalmobile;
-
-import com.example.nim_finalmobile.MovieResponse;
+package com.example.h071211053_finalmobile;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

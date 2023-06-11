@@ -1,4 +1,4 @@
-package com.example.nim_finalmobile;
+package com.example.h071211053_finalmobile;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -1,4 +1,4 @@
-package com.example.nim_finalmobile;
+package com.example.h071211053_finalmobile;
 
 import android.content.Context;
 import android.content.Intent;

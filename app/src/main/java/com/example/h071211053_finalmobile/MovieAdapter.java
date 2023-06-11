@@ -1,4 +1,4 @@
-package com.example.nim_finalmobile;
+package com.example.h071211053_finalmobile;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,12 +14,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
-
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
     private List<Movie> movies;
 
     public MovieAdapter(List<Movie> movies) {
         this.movies = movies;
+
     }
 
     @NonNull
@@ -32,7 +32,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
     @Override
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
-        holder.setData(movies.get(position));
+        Context context = holder.itemView.getContext();
+        Movie movie = movies.get(position);
+        holder.setData(movie, context);
     }
 
     @Override
@@ -52,8 +54,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
             tahun = itemView.findViewById(R.id.tahun);
         }
 
-        public void setData(Movie movie) {
-            Context context = itemView.getContext();
+        public void setData(Movie movie, Context context) {
             String title = movie.getTitle();
             String year = movie.getReleaseDate();
             String gambar = "https://image.tmdb.org/t/p/w300_and_h450_bestv2/" + movie.getPosterPath();

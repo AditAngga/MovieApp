@@ -1,4 +1,5 @@
-package com.example.nim_finalmobile;
+package com.example.h071211053_finalmobile;
+
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -24,7 +25,7 @@ public class MovieFragment extends Fragment {
     private MovieAdapter movieAdapter;
 
     public MovieFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
@@ -33,7 +34,6 @@ public class MovieFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_movies, container, false);
 
         recyclerView = view.findViewById(R.id.recycleView);
-
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -68,5 +68,4 @@ public class MovieFragment extends Fragment {
         return view;
     }
 }
-
 
